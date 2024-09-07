@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ ! -d "env" ]; then
+  python3 -m venv env
+  env/bin/pip install --upgrade pip
+  env/bin/pip install --upgrade build
+  env/bin/pip install --upgrade twine
+fi
+
+rm -rf build
+rm -rf dist
+env/bin/python -m build --sdist
+env/bin/python -m build --wheel
+env/bin/python -m twine upload dist/*

@@ -1,0 +1,21 @@
+<nav class="render">
+    <ul>
+        <label>{{ navigation.name }}</label>
+        {%- for item in navigation.files recursive %}
+        <li>
+            {% if item.type == "file" %}
+            <a href="{{ item.url | url_for }}">{{ item.name }}</a>
+            {% elif item.type == "javadoc" %}
+            <a href="{{ item.url | url_for }}" class="javadoc"
+                >{{ item.name }}</a
+            >
+            {% elif item.type == "directory" %}
+            <label>{{ item.name }}</label>
+            <ul>
+                {{ loop(item.files) }}
+            </ul>
+            {% endif %}
+        </li>
+        {%- endfor %}
+    </ul>
+</nav>

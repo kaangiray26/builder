@@ -1,0 +1,12 @@
+title: mirage
+url: http://localhost:5000
+author: kaangiray26
+canonical: http://localhost:5000
+description: Documentation for mirage
+bind: localhost:5000
+source: example
+exclude: [".", "static", "templates"]
+branch: mirage
+baseurl: mirage
+deploy: git@github.com:kaangiray26/mirage.git
+logo: /static/favicon.png

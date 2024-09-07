@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>{{ title }}</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=5"
+        />
+        <meta name="description" content="{{ description }}" />
+        <link rel="stylesheet" href="{{ '/static/style.css' | url_for }}" />
+        <link
+            rel="shortcut icon"
+            type="image/svg+xml"
+            href="{{ '/static/favicon.svg' | url_for }}"
+        />
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="{{ '/' | url_for }}">
+                    <img
+                        src="{{ '/static/favicon.svg' | url_for }}"
+                        alt="Logo"
+                    />
+                    <span>{{ title }}</span>
+                </a>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                {% include "navigation.html" %}
+                <div class="rendered">{{ content }}</div>
+            </div>
+        </main>
+        <footer>
+            <p>
+                Created with
+                <a href="https://github.com/kaangiray26/mirage">Mirage</a>
+            </p>
+        </footer>
+    </body>
+</html>

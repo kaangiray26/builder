@@ -1,0 +1,6 @@
+__pycache__
+env
+pypi/build
+pypi/dist
+*.egg-info
+site
